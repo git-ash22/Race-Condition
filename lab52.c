@@ -5,9 +5,9 @@
 #include <sys/wait.h>
 int main()
 {
-	int shmid1=shmget(IPC_PRIVATE,siouteof(int),IPC_CREAT|0666);//for variable x
-	int shmid2=shmget(IPC_PRIVATE,siouteof(int)*2,IPC_CREAT|0666);//for flag[2]
-	int shmid3=shmget(IPC_PRIVATE,siouteof(int),IPC_CREAT|0666);//for turn
+	int shmid1=shmget(IPC_PRIVATE,sizeof(int),IPC_CREAT|0666);//for variable x
+	int shmid2=shmget(IPC_PRIVATE,sizeof(int)*2,IPC_CREAT|0666);//for flag[2]
+	int shmid3=shmget(IPC_PRIVATE,sizeof(int),IPC_CREAT|0666);//for turn
 	int *x=(int*)shmat(shmid1,0,0);
 	int *flag=(int*)shmat(shmid2,0,0);
 	*x=0;
