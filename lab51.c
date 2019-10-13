@@ -38,6 +38,7 @@ int main()
 		{
 		wait(NULL);
 		wait(NULL);
+		wait(NULL);
 		printf("Final value of X: %d\n",*x);
 		}
 	}
